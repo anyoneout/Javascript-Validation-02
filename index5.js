@@ -35,6 +35,6 @@ function tellFortune(myName1) {
 }
 
 
-(tellFortune("Chris"));
+tellFortune("Chris");
 
 
