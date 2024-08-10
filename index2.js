@@ -1,44 +1,81 @@
 
-myName = "";
-lengthOfName = myName.length;
-
-function willMarryLate() {
-  if (lengthOfName > 7) {
-    console.log("You will marry late in life")
+function nameLessThanSeven(aName) {
+  if (aName.length > 7) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function willMarryEarly() {
-  if (lengthOfName < 5) {
-    console.log("You will marry within a year")
+
+function nameGreaterThan5(aName) {
+  if (aName.length < 5) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function onceInALifetime() {
-  if (lengthOfName >= 5 && lengthOfName <= 7 ) {
-    console.log("You will encounter a once-in-a-lifetime opportunity")
+function nameBetweenFiveAndSeven(aName) {
+  if (aName.length >= 5 && aName.length <= 7 ) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function willBeRich() {
-  if (myName[0] === "R") {
-    console.log("You will be rich")
+function startsWithR(aName) {
+  if (aName[0] === "R") {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function willFallInLove() {
-  if (myName.includes("i")) {
-    console.log("You will fall in love this week")
+function hasAnI(aName) {
+  if (aName.includes("i")) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-function tellFortune(myName) {
-  onceInALifetime();
-  willMarryLate();
-  willMarryEarly();
-  willBeRich();
-  willFallInLove();
-  
+
+function tellFortune(aName) {
+  let a = nameLessThanSeven(aName);
+  let b = nameGreaterThan5(aName);
+  let c = nameBetweenFiveAndSeven(aName);
+  let d = startsWithR(aName);
+  let e = hasAnI(aName);
+
+  if(a) {
+    console.log(`${aName} You will marry late in life.`)
+  } else {
+    console.log(`${aName} You will die alone.`)
+  }
+  if(b) {
+    console.log(`${aName} You will marry within a year.`)
+  } else {
+    console.log(`${aName} You will date fruitlessly.`)
+  }
+  if(c) {
+    console.log(`${aName} You will encounter a once in a lifetime opportunity.`)
+  } else {
+    console.log(`${aName} You will encounter a twice in a lifetime opportunity.`)
+  }
+  if(d) {
+    console.log(`${aName} You will be rich.`)
+  } else {
+    console.log(`${aName} You will be "Rich" after a name change.`)
+  }
+  if(e) {
+    console.log(`${aName} You will fall in love this week.`)
+  } else {
+    console.log(`${aName} You will fall down the stairs this week.`)
+  }
 }
 
-tellFortune(Jen);
+tellFortune("Cat");
+tellFortune("Katrina");
+tellFortune("Carissa");
+tellFortune("Reba");

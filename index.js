@@ -8,7 +8,7 @@
 
 
 
-
+console.log("hello from index.js");
 
 myName = "Chris";
 
